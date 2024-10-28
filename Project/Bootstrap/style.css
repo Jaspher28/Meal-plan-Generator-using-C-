@@ -1,0 +1,580 @@
+:root {
+    --primary: #198754;
+    --lightgreen: #19875442;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+
+/* common styles start */
+.green-text {
+    color: var(--primary);
+}
+
+.title-text {
+    font-size: 3rem;
+    font-weight: bold;
+}
+/* common styles end */
+
+
+/* nav start */
+.nav-item {
+    margin: 10px;
+}
+
+.nav-link {
+    color: #ffffffa1;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link.active {
+    color: white !important;
+}
+
+.navbar {
+    background-color: #0e382c;
+}
+.profileicon .bi {
+    font-size: 3rem;
+}
+/* nav end */
+
+
+/* main start */
+.mainheading {
+    font-size: 4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+main .row {
+    height: max-content;
+    margin-bottom: 20px;
+}
+/* main end */
+
+
+/* modal start */
+#generateplanmodal label {
+    font-size: 0.9rem;
+}
+
+#generateplanmodal .modal-content {
+    border-radius: 0.5rem;
+}
+
+#generateplanmodal .input-group {
+    position: relative;
+    /*  margin-bottom: 20px;*/
+}
+
+.error-message {
+    font-size: 15px;
+}
+
+#generateplanmodal .input {
+    border: solid 1px #9e9e9e;
+    width: 100%;
+    border-radius: 10px;
+    background: none;
+    padding: 0.6rem 2rem 0.6rem 2.5rem;
+    font-size: 1rem;
+    color: black;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+#generateplanmodal .input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666666;
+    font-size: 1.2rem;
+    z-index: 4;
+}
+
+#generateplanmodal .user-label {
+    position: absolute;
+    left: 45px;
+    color: #666666;
+    pointer-events: none;
+    transform: translateY(0.6rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+#generateplanmodal .input:focus,
+#generateplanmodal .input:valid {
+    outline: none;
+    border: 1px solid #a5a5a5;
+    box-shadow: 0 0 2px rgba(84, 84, 84, 0.5);
+}
+
+#generateplanmodal .input:focus ~ .user-label,
+#generateplanmodal .input:valid ~ .user-label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: white;
+    padding: 0 .2em;
+    color: #535353;
+}
+
+#generateplanmodal .user-label-2 {
+    position: absolute;
+    left: 45px;
+    color: #666666;
+    pointer-events: none;
+    transform: translateY(-50%) scale(0.8);
+    background-color: white;
+    padding: 0 .2em;
+}
+
+#generateplanmodal .modal-title {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    border-radius: 5px;
+    background-color: var(--primary);
+}
+
+#generateplanmodal .close-button {
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+#generateplanmodal .close-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#generateplanmodal .close-button:hover {
+    background-color: #bebebe5f;
+}
+
+#generateplanmodal .btn-primary {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#generateplanmodal .btn-primary:hover {
+    background-color: #0a643a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--primary);
+}
+/* zoom */
+#generateplanmodal .modal-dialog {
+    transform: scale(0.7);
+    transition: transform 0.3s ease-in-out;
+}
+
+#generateplanmodal.show .modal-dialog {
+    transform: scale(1);
+}
+/* modal end */
+
+
+/* carousel blog start */
+#carouselblog {
+    margin-top: 150px !important;
+}
+
+.carouselblog-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.carouselblog-carousel .owl-nav .owl-prev, .carouselblog-carousel .owl-nav .owl-next {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    background: green;
+    border-radius: 55px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .15);
+    font-size: 25px;
+    transition: 0.5s;
+}
+
+.carouselblog-carousel .owl-nav .owl-prev:hover, .carouselblog-carousel .owl-nav .owl-next:hover {
+    background: #FFF;
+    color: green;
+}
+
+/* .carouselblog-item {
+  height: auto;
+  border-radius: 10px;
+ } */
+
+/* .carouselblog-card {
+  border-radius: 15px;
+} */
+
+.image-container {
+    position: relative;
+    width: 100%; /* Adjust as needed */
+    max-width: 400px; /* Maximum width of the image */
+    margin: auto; /* Center the container */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 30px; /* Optional: rounded corners */
+}
+
+.image-container img {
+    width: 100%; /* Make the  image responsive */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s; /* Image zoom effect */
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0; /* Align to the bottom */
+    left: 0;
+    width: 100%;
+    height: 55%; /* Initial height of the overlay */
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, /* Darker black at the bottom */
+    rgb(6, 6, 6) 70%, /* Slightly less opaque black in the middle */
+    rgba(0, 0, 0, 0.032) 100%); /* Fully transparent at the top */
+    display: flex; /* Center the text vertically */
+    flex-direction: column; /* Stack heading and paragraph */
+    justify-content: start; /* Center vertically */
+    /* align-items: center;  */
+    color: white; /* Text color */
+    font-size: 24px; /* Font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better visibility */
+    transition: height 0.2s; /* Smooth transition */
+}
+
+.image-container:hover .overlay {
+    height: 90%; /* Expand overlay on hover */
+}
+
+.image-container:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.overlay-subheading {
+    text-decoration: none;
+}
+
+.overlay-subheading:hover {
+    text-decoration: none;
+}
+
+.overlay-heading {
+    transition: transform 0.5s; /* Smooth upward movement */
+    font-weight: bold;
+}
+
+.image-container:hover .overlay-heading {
+    transform: translateY(-10px); /* Move heading up */
+    text-decoration: underline;
+}
+
+.overlay-paragraph {
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s; /* Fade in */
+    font-size: 17px; /* Paragraph font size */
+    color: gray;
+}
+
+.image-container:hover .overlay-paragraph {
+    opacity: 1; /* Show paragraph on hover */
+}
+/* carousel blog end */
+
+
+/* why diet start */
+#whydiet {
+    background-color: #19875442;
+    margin-top: 200px;
+}
+/* why diet end */
+
+
+/* carousel start */
+#carouseltop {
+    margin-top: 200px;
+}
+
+.carouseltop-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.carouseltop-carousel .owl-nav .owl-prev, .carouseltop-carousel .owl-nav .owl-next {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* color: #000; */
+    background: green;
+    border-radius: 55px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .15);
+    font-size: 25px;
+    transition: 0.5s;
+}
+
+.carouseltop-carousel .owl-nav .owl-prev:hover, .carouseltop-carousel .owl-nav .owl-next:hover {
+    background: #FFF;
+    color: green;
+}
+
+.carouseltop-item {
+    height: auto;
+    border-radius: 40px;
+    background: rgb(0,103,105);
+    background: linear-gradient(90deg, rgba(0,103,105,1) 5%, rgba(64,165,120,1) 81%);
+}
+
+.carouseltop-card {
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    #carousel-img {
+        display: none;
+    }
+}
+
+#carousel-img {
+    max-height: 300px;
+}
+
+#carouseltop button:hover {
+    color: var(--primary);
+}
+/* carousel end */
+
+
+/* fAQ start */
+#fAQs {
+    margin-top: 200px;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--primary);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--sub-primary);
+}
+
+.faq-toggle {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding: 20px 0;
+    color: rgba(0, 0, 0, 0.694);
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1000px;
+    padding-bottom: 20px;
+}
+/* FAQ end */
+
+
+/* carousel testimonial start */
+#testimonial {
+    margin-top: 200px;
+}
+
+.staricons .bi {
+    color: var(--primary);
+}
+
+.blogimg {
+    width: 50px !important;
+}
+/* carousel testimonial end */
+
+
+/* footer start */
+#foot {
+    background-color: #0e382c;
+    margin-top: 100px;
+}
+
+.items {
+    color: rgb(185, 185, 185);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.items:hover {
+    color: whitesmoke;
+}
+
+.socialicons .bi {
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+/* footer end */
+
+
+/* contact start */
+input:focus, textarea:focus {
+    outline: none !important; /* Remove the default outline */
+    box-shadow: 0 0 5px 2px var(--lightgreen) !important; /* Apply custom color shadow */
+    border-color: var(--primary) !important; /* Change border color on focus */
+}
+/* contact end */
+
+
+/* modal styling start */
+#strategicPlanModal .modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#strategicPlanModal .modal-header {
+    background-color: var(--primary);
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 20px 30px;
+}
+
+#strategicPlanModal .modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#strategicPlanModal .modal-body {
+    padding: 30px;
+}
+
+#strategicPlanModal .modal-footer {
+    border-top: none;
+    padding: 20px 30px;
+}
+
+#strategicPlanModal .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+#strategicPlanModal .btn-primary:hover {
+    background-color: #146c43;
+    border-color: #146c43;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(25, 135, 84, 0.3);
+}
+
+#strategicPlanModal .btn-secondary {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #6c757d;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+#strategicPlanModal .btn-secondary:hover {
+    background-color: #e2e6ea;
+    color: #495057;
+    transform: translateY(-2px);
+}
+
+#strategicPlanModal .tick-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+#strategicPlanModal .lead {
+    color: #495057;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#strategicPlanModal .modal.show .modal-dialog {
+    animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+/* modal styling end */
+
+
+/* sucess toast start */
+#successToast {
+    background-color: #99ffb9;
+}
+#errorToast {
+    background-color: #ff9999;
+}
+/* sucess toast end */

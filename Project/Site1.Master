@@ -1,0 +1,203 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Project.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Meal Maker</title>
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="images/logo.png" />
+    
+    <!-- Bootstrap -->
+    <!-- <link href="Bootstrap/boostrap.min.css" rel="stylesheet" />-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--jquery -->
+    <script src="Bootstrap/jquery.min.js"></script>
+
+     <!-- Bootstrap -->
+     <!--<script src="Bootstrap/boostrap.bundle.min.js"></script>-->    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+
+    <!-- Owl library css -->
+    <link href="Owllibrary/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="Owllibrary/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" rel="stylesheet" />     
+      
+    <!-- Owl library js -->
+    <script src="Owllibrary/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!-- External CSS -->
+    <link href="Bootstrap/style.css" rel="stylesheet" />
+
+    <!--animate.css-->
+    <link  rel="stylesheet"  href ="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+       
+    <!--nav start-->
+    <nav class="navbar navbar-expand-lg text-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+            <div class="d-flex">
+                <img src="images/logo.png" alt="logo" width="60px" height="60px"/>
+                <h2 class="py-2 text-light">Meal Maker</h2>
+            </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto ">             
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.aspx">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#whydiet">Diet Plan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.aspx">About </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.aspx">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Dashboard.aspx">Dashboard</a>
+                </li>               
+                <li class="nav-item">                                
+                    <a class="nav-link" href="Logout.aspx">Logout</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <div class="d-flex" >
+                    <div class="profileicon">                       
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <h4 class="ms-3 my-0"> 
+                            <%-- Insert the username from session --%>
+                            <%= Session["Username"] != null ? Session["Username"].ToString() : "Guest" %> 
+                        </h4>                        
+                    </div>                  
+                </div>              
+            </ul>                    
+            </div>
+        </div>
+    </nav>
+    <!--nav end-->
+
+      
+    <!--Main content Placeholder -->    
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> </asp:ContentPlaceHolder>
+    <!--Main content Placeholder -->
+ 
+        
+    <!--footer start-->
+    <footer id="foot" class="py-4">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-6 d-flex justify-content-sm-center justify-content-md-start">
+            <img src="images/logo.png" width="80px"  alt="logo">
+            <h1 class="mt-2 text-light">Meal Maker</h1>
+          </div>
+          <div class="col-md-6  pt-2 d-flex socialicons justify-content-md-end justify-content-sm-center ">
+            <i class="bi bi-linkedin "></i>
+            <i class="bi bi-github"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter-x"></i>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-md-6 col-lg-3 lh-lg">
+            <ul class="list-unstyled">
+              <h4 class="mb-4 text-light">Quick Info</h4>              
+               <li>
+                   <asp:LinkButton class="items" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Home</asp:LinkButton>
+               </li>
+               <li>
+                   <asp:LinkButton class="items" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">About</asp:LinkButton>
+               </li>
+               <li>
+                   <asp:LinkButton class="items" ID="LinkButton3" runat="server">Blogs</asp:LinkButton>
+               </li>
+               <li>
+                   <asp:LinkButton class="items" ID="LinkButton4" runat="server">FAQ</asp:LinkButton>
+               </li>
+               <li>
+                   <asp:LinkButton class="items" ID="LinkButton5" runat="server">Testimonial</asp:LinkButton>
+               </li>
+               <li>
+                   <asp:LinkButton class="items" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Contact</asp:LinkButton>
+               </li>                             
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-3 lh-lg">
+            <ul class="list-unstyled">
+              <h4 class="mb-4 text-light">Diet Plans</h4>
+            <li class="items">Anaemia</li>
+            <li class="items">Infections and Fevers</li>
+            <li class="items">Obesity and Underweight</li>
+            <li class="items">Cardiovascular Disease</li>
+            <li class="items">Gastrointestinal Disease</li>
+            <li class="items">Liver and Pancreas</li>
+            <li class="items">Diabetes Mellitus</li>
+            <li class="items">Diseases of Kidney</li>
+            <li class="items">Cancer</li>
+         </ul>
+       </div>
+          <div class="col-md-6 col-lg-3 lh-lg">
+            <ul class="list-unstyled">
+              <h4 class="mb-4 text-light">Health</h4>
+              <li class="items">Healthy Recipes</li>
+              <li class="items">Nutrition Guidelines</li>
+              <li class="items">Healthy Cooking</li>
+              <li class="items">Healthy Lifestyle</li>
+              <li class="items">Special Diets</li>
+              <li class="items">Healthy Eating</li>
+              <li class="items">Health Topics</li>
+           </ul>
+          </div>
+          <div class="col-md-6 col-lg-3 lh-lg">
+            <ul class="list-unstyled">
+              <h4 class="mb-4 text-light">Policies</h4>
+              <li class="items">Privacy Policy</li>
+              <li class="items">Cookie Policy</li>
+              <li class="items">Advertising Policy</li>
+              <li class="items">Correction Policy</li>
+              <li class="items">Privacy Settings</li>
+              <li class="items">Terms of Use</li>
+              <li class="items">Terms of Service</li>              
+           </ul>
+          </div>          
+        </div>
+      </div>
+      <hr class="border border-light border-1 opacity-30"> 
+      <div class="text-light text-center py-4">2024 @ All Rights Reserved</div>
+    </footer>
+    <!--footer end-->   
+  
+    <!-- External JS -->
+    <script src="Script/script.js"></script>
+
+   </form>
+</body>
+</html>
